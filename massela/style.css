@@ -1,0 +1,99 @@
+/* Massela legal pages. Titan One is self-hosted (assets/TitanOne-OFL.txt) so visiting these pages
+   makes no third-party requests. */
+@font-face {
+  font-family: "Titan One";
+  src: url(assets/TitanOne.woff2) format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --red: #EA3025;
+  --orange: #F0692C;      /* brand orange: decoration only */
+  --orange-ink: #C94A15;  /* same hue, dark enough for white text (4.7:1) */
+  --blue: #1B6D93;
+  --teal: #6DAE9E;
+  --text: #333;
+  --muted: #666;
+  --canvas: #F9F9F9;
+  --card: #fff;
+  --line: #EEE;
+  --display: "Titan One", "Arial Rounded MT Bold", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--text);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* The four card colors of the app, as a ribbon across the top */
+.ribbon {
+  height: 8px;
+  background: linear-gradient(90deg, var(--red) 0 25%, var(--orange) 25% 50%, var(--teal) 50% 75%, var(--blue) 75%);
+}
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 24px 16px 56px; }
+
+header { text-align: center; padding: 8px 0 20px; }
+.logo { width: 76px; height: 76px; border-radius: 22%; box-shadow: 0 4px 10px rgba(0, 0, 0, .2); }
+.brand { font: 400 46px/1.1 var(--display); color: var(--red); margin: 12px 0 16px; }
+
+nav { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+
+/* Same button language as the app: pills, outlined blue, filled when active */
+.pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0 22px;
+  border: 2px solid var(--blue); border-radius: 999px;
+  color: var(--blue); background: transparent;
+  font: 400 16px/1 var(--display); text-decoration: none;
+}
+.pill:hover { background: rgba(27, 109, 147, .08); }
+.pill[aria-current="page"] { background: var(--blue); color: #fff; }
+.pill.cta { background: var(--orange-ink); border-color: var(--orange-ink); color: #fff; font-size: 18px; min-height: 52px; padding: 0 30px; }
+.pill.cta:hover { filter: brightness(1.08); }
+.pill:focus-visible, a:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+
+h1 { font: 400 32px/1.2 var(--display); color: var(--blue); text-align: center; margin: 8px 0 6px; }
+.updated { text-align: center; color: var(--muted); font-size: 14px; margin: 0 0 22px; }
+
+.card { background: var(--card); border-radius: 16px; padding: 4px 22px 24px; box-shadow: 0 2px 3px rgba(0, 0, 0, .1); }
+.card > p:first-child { margin-top: 20px; }
+h2 { font: 400 21px/1.25 var(--display); color: var(--blue); margin: 28px 0 8px; }
+h2 + p, h2 + ul, h2 + ol { margin-top: 0; }
+ul { padding-left: 22px; }
+li { margin: 6px 0; }
+a { color: var(--blue); }
+
+/* Numbered steps as orange badges */
+ol.steps { list-style: none; counter-reset: step; padding: 0; }
+ol.steps li { counter-increment: step; position: relative; padding-left: 46px; margin: 14px 0; }
+ol.steps li::before {
+  content: counter(step);
+  position: absolute; left: 0; top: -1px;
+  width: 32px; height: 32px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--orange-ink); color: #fff; font: 400 17px/1 var(--display);
+}
+
+/* A few of the app's cards, fanned out */
+.fan { display: flex; justify-content: center; margin: 0 0 26px; padding-top: 6px; }
+.fan img {
+  width: 104px; height: auto; border-radius: 12px; border: 3px solid #fff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .22); margin: 0 -8px;
+}
+.fan img:nth-child(1) { transform: rotate(-8deg) translateY(8px); }
+.fan img:nth-child(2) { position: relative; z-index: 1; transform: translateY(-4px); }
+.fan img:nth-child(3) { transform: rotate(8deg) translateY(8px); }
+
+.cta-row { text-align: center; margin: 22px 0 0; }
+
+@media (min-width: 560px) {
+  .brand { font-size: 56px; }
+  .card { padding: 4px 36px 32px; }
+  .fan img { width: 128px; margin: 0 -6px; }
+}
