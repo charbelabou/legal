@@ -38,13 +38,10 @@ body {
 
 .wrap { max-width: 720px; margin: 0 auto; padding: 24px 16px 56px; }
 
-header { text-align: center; padding: 8px 0 20px; }
-.logo { width: 76px; height: 76px; border-radius: 22%; box-shadow: 0 4px 10px rgba(0, 0, 0, .2); }
-.brand { font: 400 46px/1.1 var(--display); color: var(--red); margin: 12px 0 16px; }
+header { text-align: center; padding: 4px 0 8px; }
+.brand { font: 400 46px/1.1 var(--display); color: var(--red); margin: 8px 0 12px; }
 
-nav { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
-
-/* Same button language as the app: pills, outlined blue, filled when active */
+/* Same button language as the app: a pill, with the primary action in orange */
 .pill {
   display: inline-flex; align-items: center; justify-content: center;
   min-height: 44px; padding: 0 22px;
@@ -52,8 +49,6 @@ nav { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
   color: var(--blue); background: transparent;
   font: 400 16px/1 var(--display); text-decoration: none;
 }
-.pill:hover { background: rgba(27, 109, 147, .08); }
-.pill[aria-current="page"] { background: var(--blue); color: #fff; }
 .pill.cta { background: var(--orange-ink); border-color: var(--orange-ink); color: #fff; font-size: 18px; min-height: 52px; padding: 0 30px; }
 .pill.cta:hover { filter: brightness(1.08); }
 .pill:focus-visible, a:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
